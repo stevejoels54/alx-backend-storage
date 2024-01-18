@@ -1,7 +1,7 @@
 --SQL script that creates a function SafeDiv
 
-DELIMITER //
-
+DROP FUNCTION IF EXISTS SafeDiv;
+DELIMITER $$
 CREATE FUNCTION SafeDiv(a INT, b INT) RETURNS DECIMAL(10, 4)
 BEGIN
     DECLARE result DECIMAL(10, 4);
@@ -13,6 +13,5 @@ BEGIN
     END IF;
 
     RETURN result;
-END //
-
+END $$
 DELIMITER ;

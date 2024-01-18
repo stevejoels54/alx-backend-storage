@@ -1,4 +1,4 @@
---SQL script that creates a function SafeDiv
+-- SQL script that creates a function SafeDiv
 DROP FUNCTION IF EXISTS SafeDiv;
 DELIMITER $$
 CREATE FUNCTION SafeDiv(a INT, b INT)

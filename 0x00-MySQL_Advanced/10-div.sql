@@ -1,10 +1,10 @@
 --SQL script that creates a function SafeDiv
-
 DROP FUNCTION IF EXISTS SafeDiv;
 DELIMITER $$
-CREATE FUNCTION SafeDiv(a INT, b INT) RETURNS DECIMAL(10, 4)
+CREATE FUNCTION SafeDiv(a INT, b INT)
+RETURNS FLOAT DETERMINISTIC
 BEGIN
-    DECLARE result DECIMAL(10, 4);
+    DECLARE result FLOAT DEFAULT 0;
 
     IF b = 0 THEN
         SET result = 0;

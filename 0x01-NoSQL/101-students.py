@@ -21,5 +21,4 @@ def top_students(mongo_collection):
         }
     ]
 
-    result = list(mongo_collection.aggregate(pipeline))
-    return result
+    return mongo_collection.aggregate(pipeline)

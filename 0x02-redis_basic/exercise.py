@@ -33,7 +33,7 @@ def count_calls(method: Callable) -> Callable:
     return wrapper
 
 
-def replay(method: Callable):
+def replay(method: Callable) -> None:
     """Displays history of calls of a particular function"""
     cache = Cache()
     key = method.__qualname__

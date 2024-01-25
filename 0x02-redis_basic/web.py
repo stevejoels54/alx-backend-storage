@@ -20,7 +20,7 @@ def url_count(method: Callable) -> Callable:
         if cached:
             return cached.decode('utf-8')
 
-        client.setex(f'{url}, 10, {method(url)}')
+        client.setex(f'{url}', 10, method(url))
         return method(*args, **kwargs)
     return wrapper
 

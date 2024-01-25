@@ -12,7 +12,7 @@ def call_history(method: Callable) -> Callable:
     """Stores history of inputs and outputs for a particular function"""
     key = method.__qualname__
     inputs = key + ':inputs'
-    ouputs = key + ':outputs'
+    outputs = key + ':outputs'
 
     @wraps(method)
     def wrapper(self, *args, **kwargs):

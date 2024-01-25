@@ -43,7 +43,9 @@ def replay(method: Callable) -> None:
     inputs = cache._redis.lrange(input_key, 0, -1)
     outputs = cache._redis.lrange(output_key, 0, -1)
 
-    print("{} was called {} times:".format(key, len(inputs)))
+    method_count = cache._redis.get(key).decode('utf-8')
+
+    print("{} was called {} times:".format(key, method_count))
 
     for inp, out in zip(inputs, outputs):
         input_args = eval(inp.decode('utf-8'))
